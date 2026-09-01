@@ -40,6 +40,24 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   items.forEach(function (el) { io.observe(el); });
 
+  // просмотр карточки целиком (лайтбокс)
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightboxImg');
+  var lbClose = document.getElementById('lightboxClose');
+  var closeLb = function () { lb.hidden = true; document.body.style.overflow = ''; };
+  document.querySelectorAll('.card-zoom').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      lbImg.src = a.getAttribute('href');
+      lbImg.alt = a.querySelector('img') ? a.querySelector('img').alt : '';
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  lb.addEventListener('click', function (e) { if (e.target !== lbImg) closeLb(); });
+  lbClose.addEventListener('click', closeLb);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) closeLb(); });
+
   // аккордеон FAQ: открыт только один пункт
   var faqs = document.querySelectorAll('.faq details');
   faqs.forEach(function (d) {
