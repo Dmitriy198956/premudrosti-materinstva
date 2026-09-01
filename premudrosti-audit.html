@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Аудит и план развития — «Премудрости материнства»</title>
+<style>
+  :root {
+    --bg: #faf5ef;
+    --card: #ffffff;
+    --ink: #3a2f2a;
+    --muted: #8a7a70;
+    --accent: #d97a5f;
+    --accent-soft: #fbe9e2;
+    --teal: #4f8f8b;
+    --teal-soft: #e4f2f1;
+    --gold: #e8b64c;
+    --gold-soft: #fdf3dc;
+    --green: #5f9c6d;
+    --green-soft: #e7f3ea;
+    --red: #c75d5d;
+    --red-soft: #fbeaea;
+    --line: #efe4d9;
+    --radius: 18px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    padding: 28px 16px 80px;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #d97a5f 0%, #c96a52 55%, #b45c49 100%);
+    color: #fff;
+    border-radius: 24px;
+    padding: 40px 36px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "🤱";
+    position: absolute;
+    right: -20px; bottom: -30px;
+    font-size: 160px;
+    opacity: .14;
+    transform: rotate(-12deg);
+  }
+  .hero .kicker {
+    display: inline-block;
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 13px;
+    letter-spacing: .4px;
+    margin-bottom: 16px;
+  }
+  .hero h1 { font-size: 32px; line-height: 1.15; margin-bottom: 10px; font-weight: 800; }
+  .hero p { font-size: 16px; opacity: .95; max-width: 560px; }
+  .hero .meta { margin-top: 18px; font-size: 13px; opacity: .85; }
+
+  /* SECTIONS */
+  section { margin: 34px 0; }
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .sec-num {
+    background: var(--accent);
+    color: #fff;
+    width: 36px; height: 36px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 16px;
+    flex-shrink: 0;
+  }
+  .sec-head h2 { font-size: 22px; font-weight: 800; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 10px rgba(90,60,40,.04);
+  }
+  .card h3 { font-size: 16px; margin-bottom: 10px; font-weight: 700; }
+  .card p { font-size: 14.5px; color: #4d4038; }
+  .card p + p { margin-top: 8px; }
+  .card ul, .card ol { margin: 8px 0 0 20px; font-size: 14.5px; color: #4d4038; }
+  .card li { margin-bottom: 6px; }
+  .card li::marker { color: var(--accent); }
+
+  /* BADGES */
+  .badge {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 3px 11px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .2px;
+  }
+  .b-red { background: var(--red-soft); color: var(--red); }
+  .b-green { background: var(--green-soft); color: var(--green); }
+  .b-gold { background: var(--gold-soft); color: #a37b1f; }
+  .b-gray { background: #f0ebe5; color: #7a6c62; }
+  .b-teal { background: var(--teal-soft); color: var(--teal); }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th {
+    text-align: left;
+    background: #f6efe8;
+    color: #6b5b50;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 10px 12px;
+  }
+  td { padding: 10px 12px; border-top: 1px solid var(--line); vertical-align: top; }
+  tr:first-child td { border-top: none; }
+  .tbl-card { overflow-x: auto; }
+  .nowrap { white-space: nowrap; }
+
+  /* QUOTE */
+  .quote {
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 14px 14px 0;
+    padding: 16px 20px;
+    margin: 14px 0;
+    font-size: 15px;
+    font-style: italic;
+    color: #6b453a;
+  }
+
+  /* WARNING */
+  .warn {
+    background: var(--gold-soft);
+    border: 1px solid #eeddb0;
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    font-size: 14px;
+    margin: 14px 0;
+  }
+  .warn b { color: #8a6a1a; }
+
+  /* LADDER (steps) */
+  .ladder { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+  .step {
+    display: flex; align-items: center; gap: 14px;
+    background: #fff; border: 1px solid var(--line);
+    border-radius: 14px; padding: 13px 16px;
+    transition: transform .15s;
+  }
+  .step:hover { transform: translateX(4px); }
+  .step .num {
+    width: 34px; height: 34px; border-radius: 10px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; color: #fff; font-size: 15px;
+  }
+  .step .info { flex: 1; min-width: 0; }
+  .step .info .t { font-weight: 700; font-size: 14.5px; }
+  .step .info .d { font-size: 12.5px; color: var(--muted); }
+  .step .price { font-weight: 800; font-size: 14px; white-space: nowrap; color: var(--accent); }
+
+  /* FUNNEL */
+  .funnel { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .fstep {
+    background: #fff; border: 1px solid var(--line);
+    border-radius: 12px; padding: 10px 14px;
+    font-size: 13px; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .fstep .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .arrow { color: var(--accent); font-weight: 800; align-self: center; }
+
+  /* TIMELINE */
+  .timeline { position: relative; margin: 10px 0 0 6px; padding-left: 26px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 8px; top: 6px; bottom: 6px;
+    width: 2px; background: var(--line);
+  }
+  .tl-item { position: relative; margin-bottom: 18px; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -24px; top: 5px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--accent); border: 3px solid #f6dcd2;
+  }
+  .tl-item .t { font-weight: 700; font-size: 14.5px; }
+  .tl-item .d { font-size: 13.5px; color: #4d4038; margin-top: 2px; }
+
+  /* CHECKLIST */
+  .todo { list-style: none; margin: 6px 0 0; }
+  .todo li {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 9px 12px; border-radius: 10px;
+    font-size: 14px;
+  }
+  .todo li:hover { background: #faf4ee; }
+  .todo .box {
+    width: 20px; height: 20px; border-radius: 6px; flex-shrink: 0;
+    border: 2px solid var(--accent); margin-top: 1px;
+  }
+
+  /* METRIC CARDS */
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .metric {
+    background: #fff; border: 1px solid var(--line); border-radius: 14px;
+    padding: 14px 16px;
+  }
+  .metric .v { font-size: 22px; font-weight: 800; color: var(--accent); }
+  .metric .l { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  .copy-block {
+    background: #fbf7f2; border: 1px dashed #d9c6b6; border-radius: 12px;
+    padding: 16px 18px; font-size: 14px; margin-top: 10px; color: #4d4038;
+    white-space: pre-wrap;
+  }
+  .tag { color: var(--teal); font-weight: 700; font-size: 13px; }
+  hr.sep { border: none; border-top: 1px solid var(--line); margin: 26px 0; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 700px) { .grid2 { grid-template-columns: 1fr; } .hero h1 { font-size: 25px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="kicker">Аудит и план развития · август 2026</span>
+    <h1>«Премудрости материнства» — перезапуск проекта</h1>
+    <p>Грудное вскармливание и первые месяцы с малышом — спокойно и по-настоящему. Челябинск + онлайн.</p>
+    <div class="meta">Елена Шуленина · консультант по ГВ, специалист по новорождённым · vk.ru/ok_gv</div>
+  </div>
+
+  <!-- TOP 10 -->
+  <section>
+    <div class="sec-head"><div class="sec-num">⚡</div><h2>Экспресс-резюме: 10 главных действий</h2></div>
+    <div class="card">
+      <p>Ваш проект нужно не «оживить», а <b>перезапустить по системе</b>. Экспертиза, обучение, живые встречи и витрина услуг уже есть. Не хватает трёх вещей: <b>позиционирования, системы контента и воронки продаж</b>.</p>
+      <ol style="margin-top:12px">
+        <li><b>Дооформить группу</b> (1–2 дня): описание, обложка, меню, закреп, отзывы.</li>
+        <li><b>Один фокус:</b> «ГВ + новорождённый + спокойная мама». Лишние темы — в отдельную рубрику.</li>
+        <li><b>Лид-магнит:</b> бесплатный гайд «Почему плачет новорождённый» — вход в воронку.</li>
+        <li><b>Система контента:</b> 4–5 постов в неделю по рубрикам, без перерывов.</li>
+        <li><b>Переупаковать консультации:</b> детализировать оффер + добавить экспресс 1500 ₽ и пакет сопровождения.</li>
+        <li><b>Собрать 10–15 отзывов</b> с прошлых встреч и консультаций — главный инструмент продаж.</li>
+        <li><b>Запустить мини-курс</b> «Мягкий старт» (1490–1990 ₽) по плану из раздела 7.</li>
+        <li><b>Реклама VK</b> на беременных и мам 0–12 мес, тест 300–500 ₽/день.</li>
+        <li><b>Telegram-канал</b> как второй рукав + VK Клипы для охватов.</li>
+        <li><b>Метрики раз в неделю</b> по чек-листу раздела 10.</li>
+      </ol>
+      <div class="quote">Цель на 90 дней: 300–500 подписчиков · 5–8 консультаций/мес · 20–30 продаж цифровых продуктов · 40–60 тыс. ₽/мес</div>
+    </div>
+  </section>
+
+  <!-- AUDIT -->
+  <section>
+    <div class="sec-head"><div class="sec-num">1</div><h2>Аудит: что я увидела в ваших постах</h2></div>
+
+    <div class="card">
+      <h3>Состояние группы «Премудрости материнства»</h3>
+      <div class="tbl-card">
+        <table>
+          <tr><th>Метрика</th><th>Сейчас</th><th>Оценка</th></tr>
+          <tr><td>Подписчики</td><td><b>14</b></td><td><span class="badge b-red">критично мало</span></td></tr>
+          <tr><td>Просмотры постов</td><td>11–185</td><td><span class="badge b-red">охватов нет</span></td></tr>
+          <tr><td>Реакции на посты</td><td>0–33</td><td><span class="badge b-gold">мамы откликаются, когда видят</span></td></tr>
+          <tr><td>Регулярность</td><td>1–4 поста/мес, перерыв 1,5 года</td><td><span class="badge b-red">алгоритмы «забыли» группу</span></td></tr>
+          <tr><td>Витрина услуг</td><td>онлайн 3500 ₽, выезд 5000 ₽</td><td><span class="badge b-green">есть, но не продаётся</span></td></tr>
+          <tr><td>Оформление</td><td>описание пустое, нет закрепа</td><td><span class="badge b-red">группа «немая» для новичка</span></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>✅ Что уже работает</h3>
+        <ul>
+          <li><b>Живые встречи-пикники</b> — 33 реакции на анонс при 14 подписчиках. Люди приходят на офлайн!</li>
+          <li><b>Тёплый доверительный тон</b> — «берите чай, вопросы и настроение». Это редкость.</li>
+          <li><b>Сильные темы</b>: мягкая адаптация, плач, развитие до 3 лет — каждая = готовый продукт.</li>
+          <li><b>Витрина VK уже настроена</b> — экономит неделю работы.</li>
+          <li><b>Профсреда</b>: академия, конференции, обучение — материал для статуса эксперта.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>❌ Что мешает</h3>
+        <ul>
+          <li><b>Размытый фокус:</b> ГВ + лекции + демография + чужие эфиры. Алгоритм и мама не понимают, о чём группа.</li>
+          <li><b>Нет системы:</b> эпизодические посты не дают охватов.</li>
+          <li><b>Группа не витрина:</b> нет «кто вы, чем поможете, сколько стоит, что о вас говорят».</li>
+          <li><b>Бесплатные лекции без воронки:</b> не собираются контакты, нет перехода к платному.</li>
+          <li><b>Посты-простыни:</b> мамы читают с телефона одной рукой.</li>
+          <li><b>Нет доказательств:</b> 0 отзывов, 0 кейсов «было → стало».</li>
+          <li><b>Нет SEO:</b> в названии и описании нет слов «грудное вскармливание Челябинск», «консультант по ГВ».</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- NICHE -->
+  <section>
+    <div class="sec-head"><div class="sec-num">2</div><h2>Анализ ниши</h2></div>
+
+    <div class="metrics">
+      <div class="metric"><div class="v">~1,2 млн</div><div class="l">рождений в России в год</div></div>
+      <div class="metric"><div class="v">10–12 тыс.</div><div class="l">рождений в год в Челябинске</div></div>
+      <div class="metric"><div class="v">1500–5000 ₽</div><div class="l">цена консультации у частных специалистов</div></div>
+      <div class="metric"><div class="v">90–1490 ₽</div><div class="l">цена гайдов у онлайн-школ</div></div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>Ключевые выводы</h3>
+      <ul>
+        <li><b>Запрос сместился с теории на поддержку:</b> мамы покупают не информацию, а <b>спокойствие и план действий</b>.</li>
+        <li>Формат потребления: короткие видео, шпаргалки на телефон, эфиры, чаты. Ваши пикники идеально ложатся в тренд живых сообществ.</li>
+        <li><b>Сезонность:</b> пики спроса — январь-февраль и июнь-июль. Планируйте запуски к этим окнам.</li>
+        <li><b>Ваши 3500/5000 ₽ — точно в рынке.</b> Проблема не в цене, а в том, что мама не видит ценности и доказательств до покупки.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Конкуренты и цены (замер 2025–2026)</h3>
+      <div class="tbl-card">
+        <table>
+          <tr><th>Сегмент</th><th>Примеры</th><th class="nowrap">Цены</th><th>Сильная сторона</th></tr>
+          <tr><td>Частные консультанты</td><td>Профи.ру и др. (~550 анкет в Москве)</td><td class="nowrap">1500–3300 ₽</td><td>скорость, отзывы</td></tr>
+          <tr><td>Консультанты в регионах</td><td>локальные специалисты</td><td class="nowrap">2000–5000 ₽</td><td>сарафан</td></tr>
+          <tr><td>Медклиники</td><td>СМ-Клиника, GMS, «Скандинавия»</td><td class="nowrap">3100–11900 ₽, выезд до 27780 ₽</td><td>статус врача</td></tr>
+          <tr><td>Онлайн-школы</td><td>INSIDE, Karpachoff</td><td class="nowrap">гайды 90–1490 ₽, курсы 2000–11600 ₽</td><td>упаковка, трафик</td></tr>
+          <tr><td>Волонтёрские сообщества</td><td>АКЕВ, Ла Лече Лига</td><td class="nowrap">бесплатно</td><td>доверие</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Ваше место на рынке (УТП)</h3>
+      <div class="quote">Консультант по ГВ и специалист по новорождённым в Челябинске: живая поддержка + онлайн, от первых часов до первого года. ГВ, уход, сон и спокойная мама — в одной системе.</div>
+      <ul>
+        <li>Комбинация <b>ГВ + уход + мягкое воспитание</b> (у большинства — только что-то одно).</li>
+        <li><b>Живые встречи в городе</b> — почти ни у кого нет, генератор доверия и контента.</li>
+        <li><b>Личное присутствие:</b> мама покупает у человека, с которым пила чай в парке.</li>
+      </ul>
+      <div class="warn">⚠️ <b>Важно про школу.</b> Обучение в Академии материнства — часть вашей квалификации, но нишевая и спорная тема. Стройте бренд на <b>собственной практике и результатах мам</b>, школу упоминайте в блоке «образование» без акцента. Избегайте спорных тем (вакцинация, резкая критика смесей) — это режет охваты и отталкивает платёжеспособных клиентов. Мягкая подача «помогаю наладить ГВ, а не осуждаю за смесь» продаёт лучше.</div>
+    </div>
+  </section>
+
+  <!-- PACKAGING -->
+  <section>
+    <div class="sec-head"><div class="sec-num">3</div><h2>Упаковка: тексты, которые можно скопировать</h2></div>
+
+    <div class="card">
+      <h3>Описание группы (вставить в «Информацию»)</h3>
+      <div class="copy-block">👋 Я — Елена Шуленина, общественный консультант по грудному вскармливанию и специалист по новорождённым (Челябинск, работаю также онлайн по всей России).
+
+Помогаю мамам:
+🤱 наладить грудное вскармливание с первых часов;
+👶 понять новорождённого: плач, сон, уход, мягкая адаптация;
+💛 вернуть спокойствие и уверенность в материнстве.
+
+Здесь: живые встречи в парках Челябинска, бесплатные онлайн-эфиры, шпаргалки и разборы реальных ситуаций.
+
+📌 Услуги: онлайн-консультация по ГВ — 3500 ₽; выезд на дом по Челябинску — 5000 ₽.
+💬 Напишите «ХОЧУ ГАЙД» — пришлю бесплатную шпаргалку «Почему плачет новорождённый».
+
+Образование: ЮУрГУ, Королевская Академия Материнства (общественный консультант по ГВ), курсы пестования и воспитания младенцев.</div>
+    </div>
+
+    <div class="card">
+      <h3>Оффер на консультацию (текст для витрины)</h3>
+      <div class="copy-block">«Консультация по грудному вскармливанию — онлайн 3500 ₽ / с выездом 5000 ₽»
+
+Что входит:
+📹 60–90 минут разговора (видео/аудио/чат — как удобно);
+🔍 разбор именно вашей ситуации: прикладывание, количество молока, вес, ритмы, сон;
+📝 письменный пошаговый план действий на 7 дней;
+💬 сопровождение в чате 7 дней после консультации;
+🎁 бонус: шпаргалка «Позы для кормления» (PDF).
+
+Результат: вы перестаёте гадать и точно знаете, что делать — даже в 3 часа ночи.
+
+Кому НЕ подходит: острые состояния (температура, сильная боль, уплотнения) — сначала врач, я работаю в связке с медиками и не заменяю их.</div>
+      <p style="margin-top:10px; font-size:13px; color:var(--muted)">Текст выносит на поверхность ценность, снимает возражения, а «красные флаги» защищают вас юридически и повышают доверие.</p>
+    </div>
+
+    <div class="card">
+      <h3>Ключевые слова для SEO</h3>
+      <p><span class="tag">#челябинск</span> · <span class="tag">#мамычелябинска</span> · <span class="tag">#грудноевскармливание</span> · <span class="tag">#гв</span> · <span class="tag">#новорожденный</span> · <span class="tag">#консультантпогв</span> — в название, описание и хэштеги. По ним вас ищут в VK и поисковиках.</p>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section>
+    <div class="sec-head"><div class="sec-num">4</div><h2>Лестница продуктов</h2></div>
+    <div class="card">
+      <div class="ladder">
+        <div class="step"><div class="num" style="background:#a9c4b6">0</div><div class="info"><div class="t">Бесплатно: посты, эфиры, пикники, гайд про плач</div><div class="d">знакомство, доверие, сбор контактов</div></div><div class="price">0 ₽</div></div>
+        <div class="step"><div class="num" style="background:#e0a56a">1</div><div class="info"><div class="t">Трипвайер: «Шпаргалки по ГВ» (прикладывание, позы, сцеживание, вес)</div><div class="d">первая покупка, прогрев</div></div><div class="price">490 ₽</div></div>
+        <div class="step"><div class="num" style="background:#d97a5f">2</div><div class="info"><div class="t">Мини-курс «Мягкий старт: первые 6 недель с малышом»</div><div class="d">основной цифровой продукт, масштабирование</div></div><div class="price">1490–1990 ₽</div></div>
+        <div class="step"><div class="num" style="background:#c75d5d">3</div><div class="info"><div class="t">Консультации: экспресс / онлайн / выезд / пакет «Спокойное ГВ» (2 недели)</div><div class="d">основной доход сейчас</div></div><div class="price">1500–7900 ₽</div></div>
+        <div class="step"><div class="num" style="background:#a06b52">4</div><div class="info"><div class="t">Клуб «Премудрости материнства» (Donut / Telegram): эфир раз в неделю + библиотека</div><div class="d">регулярный доход, комьюнити</div></div><div class="price">390 ₽/мес</div></div>
+        <div class="step"><div class="num" style="background:#6f4a3a">5</div><div class="info"><div class="t">Премиум: «С мамой от родов до года» (курс + консультации + сопровождение)</div><div class="d">высокий чек, 2-й квартал</div></div><div class="price">12000–20000 ₽</div></div>
+      </div>
+      <p style="margin-top:12px">Правило: <b>ни одна ступень не продаётся без следующей.</b> Гайд продаёт курс, курс продаёт консультацию, консультация продаёт сопровождение.</p>
+    </div>
+  </section>
+
+  <!-- DIGITAL PRODUCT -->
+  <section>
+    <div class="sec-head"><div class="sec-num">5</div><h2>Ваш цифровой продукт: мини-курс «Мягкий старт»</h2></div>
+
+    <div class="card">
+      <h3>Почему именно он</h3>
+      <ul>
+        <li>Сделан из <b>уже готового материала</b>: ваша лекция «Мягкая адаптация новорождённого» (проведена дважды, 22+ реакций) + лекции по развитию и прогулкам + опыт консультаций.</li>
+        <li>Закрывает самую острую боль: <b>первые недели — плач, ГВ, непонимание</b>.</li>
+        <li>Низкий чек → лёгкая первая покупка → база для консультаций и клуба.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Паспорт продукта</h3>
+      <div class="tbl-card">
+        <table>
+          <tr><th>Параметр</th><th>Решение</th></tr>
+          <tr><td>Для кого</td><td>беременные (3 триместр) и мамы детей 0–2 мес</td></tr>
+          <tr><td>Обещание</td><td>«Перестанете гадать и бояться: поймёте малыша, наладите ГВ и вернёте себе сон и спокойствие за 7 дней»</td></tr>
+          <tr><td>Формат</td><td>5 видеоуроков по 15–20 мин + PDF-шпаргалки + запись эфира с ответами</td></tr>
+          <tr><td>Цена</td><td><b>1990 ₽</b>; ранняя цена предзапуска — 990 ₽</td></tr>
+          <tr><td>Где лежит</td><td>закрытый плейлист VK Видео или CoreApp (бесплатный тариф)</td></tr>
+          <tr><td>Оплата</td><td>VK Pay / СБП / перевод, выдача вручную в сообщениях (на старте)</td></tr>
+          <tr><td>Срок создания</td><td><b>2 недели</b> — 80% материала уже есть</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Программа курса</h3>
+      <ol>
+        <li><b>Почему малыш плачет (и это не всегда голод).</b> 10 причин, шкала «спокоен / в порядке / нужен врач», колики vs перевозбуждение.</li>
+        <li><b>ГВ без паники.</b> Прикладывание, позы, 5 признаков «молока хватает», ритмы кормлений по неделям.</li>
+        <li><b>Уход, который успокаивает.</b> Пеленание, ношение, купание, пупок и кожа, почему контакт — «лекарство», а не «избалованность».</li>
+        <li><b>Сон мамы и малыша.</b> Организация дня, безопасный совместный сон, «спать, когда спит малыш» — как на самом деле.</li>
+        <li><b>Мама: восстановление и опора.</b> Тело и эмоции, «третий день слёз», как просить помощь, чек-лист «первая аптечка ГВ».</li>
+      </ol>
+      <p style="margin-top:8px">➕ <b>Бонус:</b> запись эфира «ответы на вопросы» — живой формат, который у вас уже отлично получается.</p>
+    </div>
+
+    <div class="card">
+      <h3>Лид-магнит: бесплатный вход в воронку</h3>
+      <p><b>Гайд «Почему плачет новорождённый: 10 причин и что делать»</b> (PDF, 8–12 стр.) — собирается из урока 1 за 2–3 часа.</p>
+      <p>Условие: подписка + сообщение «ХОЧУ ГАЙД». На последней странице — 3 ситуации, когда нужна консультация, + оффер курса со скидкой.</p>
+    </div>
+
+    <div class="card">
+      <h3>План запуска: 4–5 недель</h3>
+      <div class="timeline">
+        <div class="tl-item"><div class="t">Неделя 1 · Подготовка</div><div class="d">Записать уроки (телефон + свет — достаточно), собрать PDF, настроить оплату, написать посты.</div></div>
+        <div class="tl-item"><div class="t">Неделя 2 · Предзапуск (прогрев)</div><div class="d">4–5 постов: истории из практики, «5 ошибок первых недель». Цель — лист ожидания «ХОЧУ КУРС».</div></div>
+        <div class="tl-item"><div class="t">Неделя 3 · Открытие продаж</div><div class="d">Эфир «Первые недели: 5 ошибок, которые дорого стоят» → оффер 990 ₽ на 3 дня. 1 продающий пост на 3 полезных.</div></div>
+        <div class="tl-item"><div class="t">Неделя 4 · Закрытие</div><div class="d">«Цена поднимется до 1990 ₽» + отзывы + бонусы. Дожим в личных сообщениях.</div></div>
+        <div class="tl-item"><div class="t">Неделя 5 · Постзапуск</div><div class="d">Разбор ошибок, работа с возражениями, подготовка второго потока.</div></div>
+      </div>
+      <div class="quote">Минимальная цель первого запуска: 15–20 продаж (≈ 20–30 тыс. ₽). Нужны ~200–300 человек в воронке, конверсия тёплой аудитории 5–10%.</div>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section>
+    <div class="sec-head"><div class="sec-num">6</div><h2>Стратегия соцсетей</h2></div>
+
+    <div class="card">
+      <h3>Роли площадок</h3>
+      <div class="tbl-card">
+        <table>
+          <tr><th>Площадка</th><th>Роль</th><th>Приоритет</th></tr>
+          <tr><td><b>VK (группа)</b></td><td>главная витрина: контент, товары, продажи</td><td><span class="badge b-red">сейчас</span></td></tr>
+          <tr><td>Личная страница VK</td><td>личный бренд, прогревы, сарафан</td><td><span class="badge b-red">сейчас</span></td></tr>
+          <tr><td>Telegram (чат + канал)</td><td>ядро лояльных, анонсы, клуб</td><td><span class="badge b-gold">месяц 2</span></td></tr>
+          <tr><td>VK Клипы / Дзен / Shorts</td><td>охваты: видео 30–60 сек</td><td><span class="badge b-gold">месяц 2–3</span></td></tr>
+          <tr><td>Одноклассники</td><td>вторичная аудитория 30+</td><td><span class="badge b-gray">позже</span></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Контент-микс: формула 40 / 30 / 20 / 10</h3>
+      <div class="ladder">
+        <div class="step"><div class="num" style="background:#4f8f8b">40%</div><div class="info"><div class="t">Польза</div><div class="d">разборы, инструкции, списки, ответы на частые вопросы</div></div></div>
+        <div class="step"><div class="num" style="background:#e8b64c">30%</div><div class="info"><div class="t">Доверие</div><div class="d">кейсы «было → стало», отзывы, фото со встреч, закулисье</div></div></div>
+        <div class="step"><div class="num" style="background:#d97a5f">20%</div><div class="info"><div class="t">Вовлечение</div><div class="d">опросы, «правда/миф», рубрика «вопрос недели»</div></div></div>
+        <div class="step"><div class="num" style="background:#c75d5d">10%</div><div class="info"><div class="t">Продажи</div><div class="d">анонсы консультаций, курса, клуба, офферы</div></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Воронка: маршрут мамы</h3>
+      <div class="funnel">
+        <div class="fstep"><span class="dot"></span>Видит пост/клип</div>
+        <div class="arrow">→</div>
+        <div class="fstep"><span class="dot"></span>Подписывается</div>
+        <div class="arrow">→</div>
+        <div class="fstep"><span class="dot"></span>Пишет «ХОЧУ ГАЙД»</div>
+        <div class="arrow">→</div>
+        <div class="fstep"><span class="dot"></span>Получает гайд + приглашение</div>
+        <div class="arrow">→</div>
+        <div class="fstep"><span class="dot"></span>Эфир / пикник</div>
+        <div class="arrow">→</div>
+        <div class="fstep"><span class="dot"></span>Курс или консультация</div>
+        <div class="arrow">→</div>
+        <div class="fstep"><span class="dot"></span>Отзыв</div>
+        <div class="arrow">→</div>
+        <div class="fstep"><span class="dot"></span>Приводит подруг</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Механики роста</h3>
+      <p><b>Бесплатно:</b> ритм 4–5 постов/нед в одно время · ответы на каждый комментарий в первый час · опрос раз в неделю · хэштеги города · взаимный пиар с сообществами мам Челябинска · личные приглашения после каждой встречи · клипы 30–60 сек (VK раздаёт им охваты).</p>
+      <p style="margin-top:8px"><b>С бюджетом:</b> реклама записи с лид-магнитом (беременность и роды / малыши 0–12 мес, гео Челябинск + РФ), тест 300–500 ₽/день. Ориентир: подписчик 20–50 ₽, лид 100–300 ₽. Ретаргетинг на смотревших видео — оффером курса.</p>
+    </div>
+  </section>
+
+  <!-- 90 DAYS -->
+  <section>
+    <div class="sec-head"><div class="sec-num">7</div><h2>Цели и метрики на 90 дней</h2></div>
+    <div class="card">
+      <div class="tbl-card">
+        <table>
+          <tr><th>Метрика</th><th>Сейчас</th><th>30 дней</th><th>90 дней</th></tr>
+          <tr><td>Подписчики группы</td><td>14</td><td>100+</td><td><b>300–500</b></td></tr>
+          <tr><td>Средний охват поста</td><td>~50–100</td><td>300+</td><td>500–1000</td></tr>
+          <tr><td>Заявки «ХОЧУ ГАЙД»</td><td>0</td><td>50</td><td>200+</td></tr>
+          <tr><td>Продажи курса/гайдов</td><td>0</td><td>5–10</td><td>20–30</td></tr>
+          <tr><td>Платные консультации/мес</td><td>~0–2</td><td>3–5</td><td>5–8</td></tr>
+          <tr><td>Отзывы в группе</td><td>0</td><td>5</td><td>15+</td></tr>
+          <tr><td>Выручка/мес</td><td>~5–7 тыс. ₽</td><td>15–20 тыс. ₽</td><td><b>40–60 тыс. ₽</b></td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section>
+    <div class="sec-head"><div class="sec-num">8</div><h2>Дорожная карта: 90 дней</h2></div>
+    <div class="card">
+      <div class="timeline">
+        <div class="tl-item"><div class="t">Недели 1–2 · «Фундамент»</div><div class="d">Оформление группы, пост-визитка, гайд-магнит, переупаковка консультаций, 3–4 поста, личные приглашения, сбор 5 отзывов.</div></div>
+        <div class="tl-item"><div class="t">Недели 3–4 · «Разгон»</div><div class="d">4–5 постов/нед, бесплатный эфир «Мягкая адаптация» (готовая тема!), пикник, 2–3 клипа, старт рекламы с малым бюджетом.</div></div>
+        <div class="tl-item"><div class="t">Недели 5–8 · «Запуск курса»</div><div class="d">Запись уроков → предзапуск → продажи → отзывы участниц. Параллельно консультации.</div></div>
+        <div class="tl-item"><div class="t">Недели 9–12 · «Система»</div><div class="d">Второй поток курса, запуск клуба (390 ₽/мес), Telegram-канал, пакет «Спокойное ГВ» 7900 ₽, анализ метрик и план на следующий квартал (сон / прикорм — второй продукт).</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WARNINGS -->
+  <section>
+    <div class="sec-head"><div class="sec-num">9</div><h2>Предостережения</h2></div>
+    <div class="card">
+      <ol>
+        <li><b>Медицинские границы.</b> Вы — общественный консультант, не врач. Про острые состояния (мастит, температура, резкое падение веса) всегда: «сначала врач». Это защита и доверие.</li>
+        <li><b>Не бросайте офлайн.</b> Пикники — ваше главное отличие. После каждой встречи: фото, отчёт, приглашение в группу, сбор отзывов.</li>
+        <li><b>Одна площадка сначала.</b> Сначала VK до системы, потом Telegram, потом клипы. Один мастер-канал лучше трёх заброшенных.</li>
+        <li><b>Регулярность важнее идеальности.</b> Пост за 30 минут по расписанию лучше идеального, который не вышел. Готовьте контент блоками раз в неделю.</li>
+        <li><b>Собирайте контакты с первого дня.</b> Каждая заявка «ХОЧУ ГАЙД» — это право писать. Это ваш главный актив.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FIRST STEPS -->
+  <section>
+    <div class="sec-head"><div class="sec-num">10</div><h2>Первые 5 действий — прямо сегодня</h2></div>
+    <div class="card">
+      <ul class="todo">
+        <li><span class="box"></span>Скопируйте описание группы из раздела 3 и вставьте в «Информацию».</li>
+        <li><span class="box"></span>Напишите 3–5 прошлым клиенткам/участницам встреч: «Можно попросить отзыв в 2 предложениях?» — и пригласите в группу.</li>
+        <li><span class="box"></span>Набросайте 8 страниц гайда «Почему плачет новорождённый» (структура — урок 1 курса).</li>
+        <li><span class="box"></span>Опубликуйте пост-визитку и закрепите его.</li>
+        <li><span class="box"></span>Напишите анонс ближайшего пикника с вопросом «в каком районе встречаемся?» — это ваш лучший пост по вовлечению.</li>
+      </ul>
+    </div>
+    <div class="quote" style="text-align:center">Всё получится. Ваши мамы уже любят ваши встречи — осталось сделать так, чтобы о вас узнали те, кому вы нужны. 💛</div>
+  </section>
+
+</div>
+</body>
+</html>
