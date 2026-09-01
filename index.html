@@ -1,353 +1,488 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Премудрости материнства — консультации по ГВ и поддержка мам</title>
-  <meta name="description" content="Премудрости материнства — консультации по грудному вскармливанию и поддержка мам в Челябинске и онлайн. Помощь с ГВ, плачем новорождённого, уходом и спокойным стартом первых недель.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Премудрости материнства — консультант по грудному вскармливанию в Челябинске и онлайн</title>
+<meta name="description" content="Елена Шуленина — консультант по грудному вскармливанию и специалист по новорождённым. Челябинск и онлайн: налаживаем ГВ, разбираемся с плачем, сном и уходом. Консультации от 1500 ₽, живые встречи, бесплатный гайд «Почему плачет новорождённый».">
+<meta name="keywords" content="консультант по грудному вскармливанию Челябинск, ГВ, новорождённый, онлайн-консультация по ГВ, помощь при ГВ, мамы Челябинска">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Премудрости материнства — грудное вскармливание и первые месяцы с малышом">
+<meta property="og:description" content="Спокойно и по-настоящему. Консультации по ГВ и уходу за новорождённым: Челябинск + онлайн по всей России.">
+<meta property="og:image" content="assets/hero-wide.jpg">
+<meta name="theme-color" content="#faf5ef">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤱</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top">
-        <span class="brand-mark">🤱</span>
-        <span>
-          <strong>Премудрости материнства</strong>
-          <small>Челябинск и онлайн</small>
-        </span>
+
+<a class="skip" href="#main">К содержанию</a>
+
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top">
+      <span class="brand-mark">🤱</span>
+      <span class="brand-text">
+        <b>Премудрости материнства</b>
+        <i>Челябинск + онлайн</i>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#help">Чем помогу</a>
+      <a href="#services">Услуги и цены</a>
+      <a href="#course">Мини-курс</a>
+      <a href="#meetings">Встречи</a>
+      <a href="#about">Обо мне</a>
+      <a href="#faq">Вопросы</a>
+      <a class="nav-cta" href="#contacts">Записаться</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero-art" role="img" aria-label="Мама с новорождённым в кресле у окна"></div>
+  <div class="wrap hero-in">
+    <span class="kicker">Консультант по ГВ · специалист по новорождённым</span>
+    <h1>Грудное вскармливание и первые месяцы с малышом — <em>спокойно и по-настоящему</em></h1>
+    <p class="lead">Помогаю мамам наладить кормление, понять плач и сон новорождённого и вернуть себе уверенность — без осуждения, страшилок и советов «просто потерпи».</p>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="#services">Выбрать помощь</a>
+      <a class="btn btn-ghost" href="#gift">🎁 Забрать бесплатный гайд</a>
+    </div>
+    <ul class="hero-facts">
+      <li><b>60–90</b><span>минут разбора вашей ситуации</span></li>
+      <li><b>7 дней</b><span>поддержки в чате после консультации</span></li>
+      <li><b>0–12 мес</b><span>работаю с мамами с первых часов</span></li>
+    </ul>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-in">
+    <span>прикладывание без боли</span><span>•</span><span>«хватает ли молока»</span><span>•</span><span>плач новорождённого</span><span>•</span><span>сон и ритмы дня</span><span>•</span><span>лактостаз и застои</span><span>•</span><span>отказ от груди</span><span>•</span><span>возвращение к ГВ</span><span>•</span><span>сцеживание и хранение</span><span>•</span><span>завершение ГВ</span><span>•</span>
+    <span>прикладывание без боли</span><span>•</span><span>«хватает ли молока»</span><span>•</span><span>плач новорождённого</span><span>•</span><span>сон и ритмы дня</span><span>•</span><span>лактостаз и застои</span><span>•</span><span>отказ от груди</span><span>•</span><span>возвращение к ГВ</span><span>•</span><span>сцеживание и хранение</span><span>•</span><span>завершение ГВ</span><span>•</span>
+  </div>
+</div>
+
+<!-- ===== PAIN ===== -->
+<section class="sec" id="pain">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Знакомо?</span>
+      <h2>Если хотя бы одно «да» — вы по адресу</h2>
+      <p class="sec-sub">Это самые частые ситуации, с которыми ко мне приходят мамы. Почти всё решается быстрее, чем кажется в три часа ночи.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain reveal">«Кормлю — и <b>больно</b>. Трещины, зажимаюсь, жду кормления со страхом»</div>
+      <div class="pain reveal">«Кажется, что <b>молока мало</b>. Все советуют докорм смесью, а я не хочу»</div>
+      <div class="pain reveal">«Малыш <b>плачет</b>, и я не понимаю, что ему нужно»</div>
+      <div class="pain reveal">«Он висит на груди <b>круглосуточно</b> — я не успеваю ни поесть, ни поспать»</div>
+      <div class="pain reveal">«Каждый советует своё: врач, мама, свекровь, интернет. <b>Кому верить?</b>»</div>
+      <div class="pain reveal">«Я в порядке, но <b>тревожно</b>. Хочу, чтобы кто-то знающий сказал: вы всё делаете правильно»</div>
+    </div>
+    <p class="pain-note reveal">Вы не «плохая мама» и не «слишком мнительная». Вам просто нужен человек, который спокойно посмотрит на ситуацию со стороны и даст понятный план.</p>
+  </div>
+</section>
+
+<!-- ===== HELP ===== -->
+<section class="sec sec-tint" id="help">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Чем помогу</span>
+      <h2>Четыре зоны, в которых становится легче</h2>
+    </div>
+    <div class="cards-4">
+      <article class="card reveal">
+        <div class="ico ico-terra">🤱</div>
+        <h3>Грудное вскармливание</h3>
+        <p>Прикладывание и позы, боль и трещины, застои, «мало молока», сцеживание, докорм и уход от него, кризисы, отказ от груди, мягкое завершение ГВ.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico ico-teal">👶</div>
+        <h3>Понимание новорождённого</h3>
+        <p>Почему малыш плачет и как его успокоить, ношение на руках и пеленание, купание, кожа и пупок, мягкая адаптация к миру после родов.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico ico-gold">🌙</div>
+        <h3>Сон и ритм дня</h3>
+        <p>Сколько на самом деле спит новорождённый, как организовать день, безопасный совместный сон, что делать, если малыш просыпается каждые 40 минут.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico ico-green">💛</div>
+        <h3>Спокойная мама</h3>
+        <p>Восстановление после родов, «третий день слёз», усталость и раздражение, как просить о помощи и не тонуть в чужих советах.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Услуги и цены</span>
+      <h2>Выберите формат, который вам сейчас по силам</h2>
+      <p class="sec-sub">От бесплатного гайда до полного сопровождения. Начать можно с малого — и всегда можно дойти дальше.</p>
+    </div>
+
+    <div class="price-grid">
+
+      <article class="price reveal">
+        <span class="tag tag-green">бесплатно</span>
+        <h3>Гайд «Почему плачет новорождённый»</h3>
+        <div class="amount">0 ₽</div>
+        <ul>
+          <li>10 причин плача и что делать с каждой</li>
+          <li>шкала «спокоен / в порядке / нужен врач»</li>
+          <li>как отличить колики от перевозбуждения</li>
+        </ul>
+        <a class="btn btn-soft" href="#gift">Забрать гайд</a>
+      </article>
+
+      <article class="price reveal">
+        <span class="tag tag-teal">PDF</span>
+        <h3>Сборник шпаргалок по ГВ</h3>
+        <div class="amount">490 ₽</div>
+        <ul>
+          <li>прикладывание и позы для кормления</li>
+          <li>сцеживание и хранение молока</li>
+          <li>нормы набора веса и признаки «всё хорошо»</li>
+        </ul>
+        <a class="btn btn-soft" href="#contacts">Купить</a>
+      </article>
+
+      <article class="price reveal">
+        <span class="tag tag-teal">онлайн</span>
+        <h3>Экспресс-консультация, 30 минут</h3>
+        <div class="amount">1500 ₽</div>
+        <ul>
+          <li>один конкретный вопрос — один чёткий ответ</li>
+          <li>видео, аудио или переписка — как удобно</li>
+          <li>краткий план действий в сообщении</li>
+        </ul>
+        <a class="btn btn-soft" href="#contacts">Записаться</a>
+      </article>
+
+      <article class="price reveal">
+        <span class="tag tag-gold">хит</span>
+        <h3>Мини-курс «Мягкий старт»</h3>
+        <div class="amount">1 490 ₽ <s>1 990 ₽</s></div>
+        <ul>
+          <li>5 уроков про первые 6 недель с малышом</li>
+          <li>смотреть можно с телефона, одной рукой</li>
+          <li>бонус-эфир с ответами на вопросы</li>
+        </ul>
+        <a class="btn btn-soft" href="#course">Подробнее о курсе</a>
+      </article>
+
+      <article class="price price-hi reveal">
+        <span class="tag tag-terra">чаще всего выбирают</span>
+        <h3>Консультация по ГВ онлайн</h3>
+        <div class="amount">3 500 ₽</div>
+        <ul>
+          <li>60–90 минут разбора именно вашей ситуации</li>
+          <li>письменный пошаговый план на 7 дней</li>
+          <li>сопровождение в чате 7 дней</li>
+          <li>бонус: шпаргалка «Позы для кормления»</li>
+        </ul>
+        <a class="btn btn-primary" href="#contacts">Записаться на консультацию</a>
+      </article>
+
+      <article class="price reveal">
+        <span class="tag tag-terra">Челябинск</span>
+        <h3>Консультация с выездом на дом</h3>
+        <div class="amount">5 000 ₽</div>
+        <ul>
+          <li>смотрю кормление вживую и поправляю руками</li>
+          <li>разбираем быт: кроватка, слинг, ванна, вещи</li>
+          <li>план на 7 дней + чат-сопровождение</li>
+        </ul>
+        <a class="btn btn-soft" href="#contacts">Пригласить домой</a>
+      </article>
+
+      <article class="price reveal">
+        <span class="tag tag-terra">2 недели</span>
+        <h3>Пакет «Спокойное ГВ»</h3>
+        <div class="amount">7 900 ₽</div>
+        <ul>
+          <li>полная консультация + 2 контрольные встречи</li>
+          <li>ежедневная поддержка в чате 14 дней</li>
+          <li>корректируем план по ходу — не «одна и всё»</li>
+        </ul>
+        <a class="btn btn-soft" href="#contacts">Обсудить пакет</a>
+      </article>
+
+      <article class="price reveal">
+        <span class="tag tag-green">подписка</span>
+        <h3>Клуб «Премудрости материнства»</h3>
+        <div class="amount">390 ₽<small>/мес</small></div>
+        <ul>
+          <li>еженедельный эфир с ответами на вопросы</li>
+          <li>библиотека шпаргалок и записей</li>
+          <li>тёплый чат мам, где не осуждают</li>
+        </ul>
+        <a class="btn btn-soft" href="#contacts">Вступить в лист ожидания</a>
+      </article>
+
+      <article class="price reveal">
+        <span class="tag tag-gold">премиум</span>
+        <h3>«С мамой от родов до года»</h3>
+        <div class="amount">от 12 000 ₽</div>
+        <ul>
+          <li>подготовка к ГВ ещё до родов</li>
+          <li>консультации по мере необходимости весь период</li>
+          <li>курс, шпаргалки и клуб включены</li>
+        </ul>
+        <a class="btn btn-soft" href="#contacts">Узнать детали</a>
+      </article>
+
+    </div>
+
+    <p class="disclaimer reveal"><b>Важно:</b> я общественный консультант, а не врач. При температуре, сильной боли, уплотнениях в груди, резкой потере веса у малыша — сначала к врачу. Я работаю в связке с медиками и не заменяю их.</p>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="sec sec-tint" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Как проходит консультация</span>
+      <h2>Четыре шага — и у вас есть план</h2>
+    </div>
+    <ol class="steps">
+      <li class="reveal"><span class="step-n">1</span><h3>Пишете мне</h3><p>В VK или Telegram — в двух словах, что происходит. Я задам пару уточняющих вопросов и предложу подходящий формат и время.</p></li>
+      <li class="reveal"><span class="step-n">2</span><h3>Разбираем ситуацию</h3><p>60–90 минут: смотрим прикладывание, обсуждаем вес и ритмы, сон, ваше самочувствие и быт. Без спешки и без нотаций.</p></li>
+      <li class="reveal"><span class="step-n">3</span><h3>Получаете план на 7 дней</h3><p>Письменно и по пунктам: что делать сегодня, завтра, через три дня, по каким признакам понять, что стало лучше.</p></li>
+      <li class="reveal"><span class="step-n">4</span><h3>Я рядом ещё неделю</h3><p>Пишете в чат, если что-то пошло не так или появился новый вопрос. Корректируем план по ходу — вы не остаётесь одна.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== COURSE ===== -->
+<section class="sec" id="course">
+  <div class="wrap course-grid">
+    <div class="course-copy reveal">
+      <span class="eyebrow">Мини-курс</span>
+      <h2>«Мягкий старт: первые&nbsp;6&nbsp;недель с малышом»</h2>
+      <p class="sec-sub">Всё самое важное про первые недели — в пяти коротких уроках, которые можно смотреть с телефона, пока малыш спит у вас на руках.</p>
+      <ol class="lessons">
+        <li><b>Урок 1.</b> Почему малыш плачет (и это не всегда голод)</li>
+        <li><b>Урок 2.</b> Грудное вскармливание без паники</li>
+        <li><b>Урок 3.</b> Уход, который успокаивает</li>
+        <li><b>Урок 4.</b> Сон мамы и малыша</li>
+        <li><b>Урок 5.</b> Мама: восстановление и опора</li>
+        <li class="bonus"><b>Бонус.</b> Запись живого эфира с ответами на вопросы</li>
+      </ol>
+      <div class="course-cta">
+        <div class="course-price"><b>1 490 ₽</b><span>ранняя цена, дальше 1 990 ₽</span></div>
+        <a class="btn btn-primary" href="#contacts">Хочу на курс</a>
+      </div>
+    </div>
+    <div class="course-art reveal">
+      <img src="assets/bg-online.jpg" alt="Онлайн-встреча мамы с консультантом" loading="lazy">
+      <div class="course-badge">📱 смотреть можно<br>одной рукой</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEETINGS ===== -->
+<section class="sec sec-dark" id="meetings">
+  <div class="wrap meet-grid">
+    <div class="meet-art reveal">
+      <img src="assets/club-watercolor.jpg" alt="Встреча мам с малышами в парке" loading="lazy">
+    </div>
+    <div class="meet-copy reveal">
+      <span class="eyebrow eyebrow-light">Живые встречи в Челябинске</span>
+      <h2>За чашкой чая, в парке, с колясками</h2>
+      <p>Раз в несколько недель мы встречаемся в парках города: мамы, малыши, термос и вопросы. Здесь можно спросить о чём угодно, познакомиться с такими же мамами и просто выдохнуть среди своих.</p>
+      <ul class="meet-list">
+        <li>бесплатно, приходить можно с малышом любого возраста</li>
+        <li>формат «вопрос — ответ», без лекций и обязательной программы</li>
+        <li>место выбираем вместе, по районам города</li>
+        <li>в холодное время встречаемся в помещении и онлайн</li>
+      </ul>
+      <a class="btn btn-light" href="#contacts">Узнать о ближайшей встрече</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="sec" id="about">
+  <div class="wrap about-grid">
+    <div class="about-art reveal">
+      <img src="assets/bg-breastfeeding.jpg" alt="Мама кормит малыша грудью" loading="lazy">
+      <div class="about-quote">«Мама покупает не информацию,<br>а спокойствие и понятный план»</div>
+    </div>
+    <div class="about-copy reveal">
+      <span class="eyebrow">Обо мне</span>
+      <h2>Елена Шуленина</h2>
+      <p class="about-role">Общественный консультант по грудному вскармливанию, специалист по новорождённым. Челябинск, работаю также онлайн по всей России.</p>
+      <p>Я помогаю мамам с первых часов после родов и до завершения кормления. Моя задача — не выдать вам список правил, а разобраться именно в вашей ситуации: как кормите, как спит малыш, как вы себя чувствуете и что реально можно изменить уже сегодня.</p>
+      <p>Я не осуждаю за смесь, соску и «неправильный» режим. Мы вместе ищем тот вариант, в котором хорошо и малышу, и вам.</p>
+      <div class="edu">
+        <h3>Образование и практика</h3>
+        <ul>
+          <li>НИУ ЮУрГУ</li>
+          <li>Королевская Академия Материнства — курс общественных консультантов по грудному вскармливанию</li>
+          <li>Обучение в Москве: пестование младенцев, тренинг по воспитанию малышей (Центр «Рожана»)</li>
+          <li>Участница профессионального сообщества материнских профессий, конференций и круглых столов</li>
+          <li>Лекции в детской библиотеке, живые встречи и онлайн-эфиры для мам Челябинска</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALUES ===== -->
+<section class="sec sec-tint" id="values">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Как я работаю</span>
+      <h2>Пять принципов, на которые можно опереться</h2>
+    </div>
+    <div class="values">
+      <div class="value reveal"><b>Без осуждения.</b> Любой ваш выбор — точка старта, а не повод для лекции.</div>
+      <div class="value reveal"><b>Конкретика.</b> Вместо «наблюдайте» — что делать сегодня, завтра и по каким признакам судить.</div>
+      <div class="value reveal"><b>Границы.</b> Острые состояния — к врачу. Я честно говорю, когда вопрос не мой.</div>
+      <div class="value reveal"><b>Мама тоже важна.</b> Сон, еда и силы мамы — часть плана, а не «потом как-нибудь».</div>
+      <div class="value reveal"><b>Связь после.</b> Консультация не заканчивается, когда заканчивается созвон.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS -->
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Отзывы мам</span>
+      <h2>Что меняется после работы вместе</h2>
+      <p class="sec-sub">Живые отзывы и фото со встреч — в альбомах сообщества ВКонтакте.</p>
+    </div>
+    <!--
+      ШАБЛОН ОТЗЫВА — скопируйте блок ниже и вставьте реальный текст мамы (с её разрешения).
+      <figure class="review reveal">
+        <blockquote>Текст отзыва.</blockquote>
+        <figcaption>Имя, малышу N месяцев</figcaption>
+      </figure>
+    -->
+    <div class="reviews-empty reveal">
+      <p>Здесь скоро появятся истории мам: «было — стало», короткие и честные.</p>
+      <p class="small">Уже работали со мной? Буду очень благодарна за пару строк — это помогает другим мамам решиться попросить помощь.</p>
+      <div class="reviews-btns">
+        <a class="btn btn-soft" href="https://vk.com/ok_gv" target="_blank" rel="noopener">Отзывы в сообществе VK</a>
+        <a class="btn btn-primary" href="https://vk.me/ok_gv" target="_blank" rel="noopener">Оставить отзыв</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GIFT ===== -->
+<section class="gift" id="gift">
+  <div class="wrap gift-in reveal">
+    <div class="gift-copy">
+      <span class="eyebrow eyebrow-light">Бесплатно</span>
+      <h2>Гайд «Почему плачет новорождённый: 10 причин и что делать»</h2>
+      <p>Короткий PDF, который стоит сохранить в телефон ещё до роддома. Внутри — 10 причин плача, что проверить в каждом случае, и понятная шкала «спокоен / в порядке / нужен врач».</p>
+      <a class="btn btn-light btn-lg" href="https://vk.me/ok_gv" target="_blank" rel="noopener">Написать «ХОЧУ ГАЙД» в VK</a>
+      <p class="gift-small">Отправлю в ответном сообщении. Без спама и рассылок — только то, о чём вы попросите.</p>
+    </div>
+    <div class="gift-art" aria-hidden="true">🎁</div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec" id="faq">
+  <div class="wrap wrap-narrow">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Частые вопросы</span>
+      <h2>Что обычно спрашивают перед записью</h2>
+    </div>
+
+    <details class="faq reveal"><summary>Чем консультант по ГВ отличается от врача?</summary><p>Врач лечит: мастит, инфекции, болезни малыша. Я занимаюсь организацией кормления и ухода — прикладывание, ритмы, количество молока, быт, сон, ваше состояние. При «красных флагах» (температура, сильная боль, уплотнения, резкая потеря веса) я сразу направлю к врачу и дальше буду поддерживать параллельно с лечением.</p></details>
+
+    <details class="faq reveal"><summary>Онлайн-консультация правда работает? Вы же не видите нас вживую</summary><p>Да, работает: по видео отлично видно прикладывание, позу, поведение малыша у груди. 90% вопросов решается онлайн. Если пойму, что нужен очный осмотр — скажу честно и предложу выезд (по Челябинску) или врача.</p></details>
+
+    <details class="faq reveal"><summary>А если малыш будет плакать во время консультации?</summary><p>Это даже полезно: увидим, как вы его успокаиваете, и разберём это вместе. Кормить, укачивать, отвлекаться на малыша во время встречи — абсолютно нормально. Мы никуда не спешим.</p></details>
+
+    <details class="faq reveal"><summary>Я уже даю смесь. Вы будете меня ругать?</summary><p>Нет. Смесь — не провал, а иногда необходимость. Мы посмотрим, можно ли увеличить долю грудного молока и как вам при этом станет легче. Если вы решите остаться на смешанном или искусственном вскармливании — помогу выстроить это спокойно и безопасно.</p></details>
+
+    <details class="faq reveal"><summary>На каком сроке беременности стоит обратиться?</summary><p>Идеально — в третьем триместре. За одну встречу можно разобрать первые часы после родов, первое прикладывание, что взять в роддом и как не растеряться в первые дни. Это заметно снижает риск проблем с ГВ.</p></details>
+
+    <details class="faq reveal"><summary>Как оплатить и что если не подойдёт?</summary><p>Оплата переводом или по СБП, после — подтверждаю время. Если до консультации вы поймёте, что передумали, — просто напишите, перенесём или вернём оплату. Отменять и переносить можно, я всё понимаю про жизнь с малышом.</p></details>
+
+    <details class="faq reveal"><summary>Работаете только с Челябинском?</summary><p>Выезд на дом — по Челябинску. Онлайн-консультации, курс и клуб — для мам из любого города и часового пояса, время подберём.</p></details>
+  </div>
+</section>
+
+<!-- ===== CONTACTS ===== -->
+<section class="sec sec-tint" id="contacts">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Связаться</span>
+      <h2>Напишите — отвечу и подскажу формат</h2>
+      <p class="sec-sub">Даже если пока не готовы записываться: расскажите, что происходит, и я честно скажу, нужна ли вам консультация и какая.</p>
+    </div>
+    <div class="contacts">
+      <a class="contact reveal" href="https://vk.me/ok_gv" target="_blank" rel="noopener">
+        <span class="c-ico">💬</span>
+        <b>Написать в VK</b>
+        <span>Личные сообщения сообщества — самый быстрый способ</span>
       </a>
-
-      <nav class="menu" aria-label="Основная навигация">
-        <a href="#services">Услуги</a>
-        <a href="#benefits">Чем помогаю</a>
-        <a href="#about">Обо мне</a>
-        <a href="#faq">Вопросы</a>
-      </nav>
-
-      <a class="button button-small button-primary header-cta" href="https://vk.me/ok_gv" target="_blank" rel="noopener">Написать в VK</a>
-    </div>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-overlay"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Поддержка мам с первых дней материнства</span>
-          <h1>Консультации по грудному вскармливанию и заботе о новорождённом — спокойно, бережно и по делу</h1>
-          <p class="hero-text">Помогаю мамам наладить грудное вскармливание, понять плач и ритмы малыша, выстроить уход без лишней тревоги и вернуть уверенность даже в самые непростые первые недели.</p>
-
-          <div class="hero-chips">
-            <span>📍 Челябинск + онлайн</span>
-            <span>🤱 Консультант по ГВ</span>
-            <span>👶 Специалист по новорождённым</span>
-          </div>
-
-          <div class="hero-actions">
-            <a class="button button-primary" href="https://vk.me/ok_gv" target="_blank" rel="noopener">Записаться на консультацию</a>
-            <a class="button button-secondary" href="https://vk.me/ok_gv" target="_blank" rel="noopener">Хочу бесплатный гайд</a>
-          </div>
-
-          <ul class="hero-points">
-            <li>помощь с прикладыванием, болью, тревогой и нехваткой уверенности</li>
-            <li>письменный план действий после консультации</li>
-            <li>поддержка в чате, чтобы вы не оставались с вопросами один на один</li>
-          </ul>
-        </div>
-
-        <aside class="hero-card">
-          <div class="mini-card">
-            <span class="mini-label">Для кого</span>
-            <h2>Беременные и мамы малышей 0–12 месяцев</h2>
-            <p>Если вам важно мягко пройти первые недели, разобраться с кормлением, плачем, ритмами и уходом — вы по адресу.</p>
-          </div>
-
-          <div class="mini-card accent-card">
-            <span class="mini-label">Бесплатно</span>
-            <h2>Гайд «Почему плачет новорождённый»</h2>
-            <p>Напишите в сообщения фразу <strong>«ХОЧУ ГАЙД»</strong> — и получите полезную шпаргалку для первых дней с малышом.</p>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section" id="benefits">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-kicker">Чем я могу помочь</span>
-          <h2>Поддержка не только про ГВ, а про спокойную маму и понятного малыша</h2>
-          <p>На консультации мы не разбираем всё «в общем». Мы смотрим именно на вашу ситуацию и находим понятные шаги, которые можно применить сразу.</p>
-        </div>
-
-        <div class="benefits-grid">
-          <article class="info-card">
-            <div class="icon">🤱</div>
-            <h3>Наладить грудное вскармливание</h3>
-            <p>Прикладывание, позы, боль, трещины, тревога «хватает ли молока», частые прикладывания, вечерние кормления и ритмы первых недель.</p>
-          </article>
-
-          <article class="info-card">
-            <div class="icon">👶</div>
-            <h3>Понять новорождённого</h3>
-            <p>Почему малыш плачет, как отличить потребность в контакте от перевозбуждения, как мягко пройти адаптацию после родов.</p>
-          </article>
-
-          <article class="info-card">
-            <div class="icon">🌙</div>
-            <h3>Снять тревогу и хаос</h3>
-            <p>Помогаю перестать гадать, что происходит, и составить спокойный план действий, чтобы вы чувствовали опору даже ночью.</p>
-          </article>
-
-          <article class="info-card">
-            <div class="icon">💛</div>
-            <h3>Получить бережную поддержку</h3>
-            <p>Без осуждения, без давления и без страшилок. Моя задача — помочь маме, а не читать нотации.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="services">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-kicker">Услуги</span>
-          <h2>Форматы помощи, которые можно выбрать под вашу ситуацию</h2>
-          <p>Можно начать с короткого разбора, а можно сразу выбрать полноценную консультацию или сопровождение.</p>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card service-highlight">
-            <span class="service-badge">Самый быстрый старт</span>
-            <h3>Экспресс-консультация</h3>
-            <div class="price">1500 ₽</div>
-            <p>30 минут, чтобы быстро разобрать один острый вопрос и понять, что делать дальше.</p>
-            <ul>
-              <li>удобно, если нужен первый шаг без перегруза</li>
-              <li>подходит для конкретной ситуации здесь и сейчас</li>
-              <li>онлайн-формат</li>
-            </ul>
-            <a class="button button-primary button-full" href="https://vk.me/ok_gv" target="_blank" rel="noopener">Выбрать экспресс</a>
-          </article>
-
-          <article class="service-card">
-            <span class="service-badge">Популярный формат</span>
-            <h3>Онлайн-консультация по ГВ</h3>
-            <div class="price">3500 ₽</div>
-            <p>Полноценный разбор вашей ситуации по видеосвязи, аудио или в чате — как вам удобно.</p>
-            <ul>
-              <li>60–90 минут общения</li>
-              <li>разбор прикладывания, молока, веса, ритмов и сна</li>
-              <li>письменный план на 7 дней</li>
-              <li>сопровождение в чате 7 дней</li>
-            </ul>
-            <a class="button button-secondary button-full" href="https://vk.me/ok_gv" target="_blank" rel="noopener">Записаться онлайн</a>
-          </article>
-
-          <article class="service-card">
-            <span class="service-badge">Для мам в Челябинске</span>
-            <h3>Консультация с выездом на дом</h3>
-            <div class="price">5000 ₽</div>
-            <p>Если вам нужна очная помощь рядом: посмотреть прикладывание, ситуацию вживую и спокойно всё показать на месте.</p>
-            <ul>
-              <li>выезд по Челябинску</li>
-              <li>разбор ситуации у вас дома</li>
-              <li>план действий и полезная шпаргалка в подарок</li>
-            </ul>
-            <a class="button button-secondary button-full" href="https://vk.me/ok_gv" target="_blank" rel="noopener">Хочу выезд</a>
-          </article>
-
-          <article class="service-card">
-            <span class="service-badge">Максимум поддержки</span>
-            <h3>Пакет «Спокойное ГВ»</h3>
-            <div class="price">7900 ₽</div>
-            <p>Для мам, которым важно не только разобраться за один раз, но и получить сопровождение в течение двух недель.</p>
-            <ul>
-              <li>консультация онлайн или с выездом</li>
-              <li>личный чат с ответами на вопросы 14 дней</li>
-              <li>мини-курс «Мягкий старт» и шпаргалки</li>
-              <li>пошаговый план поддержки</li>
-            </ul>
-            <a class="button button-secondary button-full" href="https://vk.me/ok_gv" target="_blank" rel="noopener">Хочу сопровождение</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container two-column">
-        <div>
-          <div class="section-head left">
-            <span class="section-kicker">Как проходит работа</span>
-            <h2>Простая и понятная помощь без лишней бюрократии</h2>
-          </div>
-
-          <div class="steps">
-            <article class="step-card">
-              <span class="step-num">1</span>
-              <div>
-                <h3>Пишите в сообщения</h3>
-                <p>Опишите, что вас волнует: ГВ, плач, уход, ритмы, тревога или несколько вопросов сразу.</p>
-              </div>
-            </article>
-
-            <article class="step-card">
-              <span class="step-num">2</span>
-              <div>
-                <h3>Выбираем формат</h3>
-                <p>Экспресс, онлайн, выезд или пакет сопровождения — подберём вариант под вашу ситуацию и ресурс.</p>
-              </div>
-            </article>
-
-            <article class="step-card">
-              <span class="step-num">3</span>
-              <div>
-                <h3>Получаете план и поддержку</h3>
-                <p>После консультации у вас остаются чёткие шаги, а не ощущение, что «вроде поговорили, но что делать — непонятно».</p>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="visual-panel">
-          <div class="visual-image visual-online"></div>
-          <div class="panel-note">
-            <strong>Результат консультации:</strong>
-            <p>вы перестаёте гадать и точно знаете, что делать — даже в 3 часа ночи.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="container two-column reverse">
-        <div class="visual-panel">
-          <div class="visual-image visual-picnic"></div>
-        </div>
-
-        <div id="about">
-          <div class="section-head left">
-            <span class="section-kicker">Обо мне</span>
-            <h2>Меня зовут Елена Шуленина</h2>
-            <p>Я — консультант по грудному вскармливанию и специалист по новорождённым. Помогаю мамам мягко пройти первые недели с малышом, понять, что происходит, и найти опору в материнстве.</p>
-          </div>
-
-          <div class="about-box">
-            <h3>В работе для меня важны:</h3>
-            <ul>
-              <li>бережное отношение к маме и малышу</li>
-              <li>понятные рекомендации без перегруза</li>
-              <li>сочетание знаний, практики и живой человеческой поддержки</li>
-            </ul>
-          </div>
-
-          <div class="about-box">
-            <h3>Образование и подготовка</h3>
-            <ul>
-              <li>ЮУрГУ</li>
-              <li>Королевская Академия Материнства — общественный консультант по ГВ</li>
-              <li>курсы по пестованию и воспитанию младенцев</li>
-              <li>постоянное обучение по теме материнства и новорождённых</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-kicker">Дополнительно</span>
-          <h2>Полезные форматы для знакомства и мягкого старта</h2>
-        </div>
-
-        <div class="extras-grid">
-          <article class="extra-card">
-            <h3>Бесплатный гайд</h3>
-            <p>«Почему плачет новорождённый: 10 причин и что делать» — короткая и полезная шпаргалка для мам первых недель.</p>
-            <a href="https://vk.me/ok_gv" target="_blank" rel="noopener">Написать «ХОЧУ ГАЙД»</a>
-          </article>
-
-          <article class="extra-card">
-            <h3>Мини-курс «Мягкий старт»</h3>
-            <p>Для мам, которые хотят спокойно разобраться в первых 6 неделях: плач, ГВ, уход, сон и опора для мамы.</p>
-            <a href="https://vk.me/ok_gv" target="_blank" rel="noopener">Узнать о курсе</a>
-          </article>
-
-          <article class="extra-card">
-            <h3>Живые встречи и эфиры</h3>
-            <p>Тёплые встречи, вопросы за чашкой чая, поддержка и общение для мам в Челябинске и онлайн.</p>
-            <a href="https://vk.me/ok_gv" target="_blank" rel="noopener">Спросить о ближайшей встрече</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="faq">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-kicker">Частые вопросы</span>
-          <h2>То, что мамы спрашивают чаще всего</h2>
-        </div>
-
-        <div class="faq-list">
-          <article class="faq-item">
-            <h3>Можно ли обратиться онлайн?</h3>
-            <p>Да. Онлайн-консультация подходит для большинства ситуаций: разбор ГВ, тревоги, ритмов, ухода, плача и первых шагов в сложной ситуации.</p>
-          </article>
-
-          <article class="faq-item">
-            <h3>Если ситуация срочная, вы поможете?</h3>
-            <p>Если вопрос связан с организацией ГВ и ухода — да, напишите как можно скорее. Но при температуре, сильной боли, уплотнениях и других острых состояниях сначала нужен врач. Я не заменяю медицинскую помощь.</p>
-          </article>
-
-          <article class="faq-item">
-            <h3>Что выбрать: экспресс или полную консультацию?</h3>
-            <p>Если вопрос один и нужен быстрый ориентир — подойдёт экспресс. Если вопросов несколько или вам нужен план и сопровождение, лучше полноценная консультация.</p>
-          </article>
-
-          <article class="faq-item">
-            <h3>Подходит ли помощь только для новорождённых?</h3>
-            <p>Нет. Чаще всего я работаю с беременными и мамами малышей первого года жизни, особенно в первые недели и месяцы после родов.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section final-cta">
-      <div class="container final-cta-inner">
-        <span class="section-kicker light">Связь</span>
-        <h2>Если вам нужна поддержка — напишите мне</h2>
-        <p>Расскажите, что сейчас больше всего волнует. Вместе подберём формат помощи: от бесплатного гайда до полноценной консультации и сопровождения.</p>
-        <div class="hero-actions centered">
-          <a class="button button-primary button-light" href="https://vk.me/ok_gv" target="_blank" rel="noopener">Написать в VK</a>
-          <a class="button button-secondary button-outline-light" href="https://vk.me/ok_gv" target="_blank" rel="noopener">Получить гайд</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="footer-brand">🤱 Премудрости материнства</div>
-        <p>Грудное вскармливание, первые недели с малышом и спокойная поддержка для мам.</p>
-      </div>
-
-      <div>
-        <h3>Контакты</h3>
-        <a href="https://vk.me/ok_gv" target="_blank" rel="noopener">vk.me/ok_gv</a>
-      </div>
-
-      <div>
-        <h3>Форматы</h3>
-        <p>Экспресс · онлайн · выезд · сопровождение</p>
+      <a class="contact reveal" href="https://vk.com/ok_gv" target="_blank" rel="noopener">
+        <span class="c-ico">📎</span>
+        <b>Сообщество «Премудрости материнства»</b>
+        <span>vk.com/ok_gv — посты, шпаргалки, анонсы встреч</span>
+      </a>
+      <a class="contact reveal" href="https://t.me/" target="_blank" rel="noopener">
+        <span class="c-ico">✈️</span>
+        <b>Telegram: чат «Мамы Челябинска»</b>
+        <span>Живое общение, анонсы эфиров и пикников</span>
+      </a>
+      <div class="contact contact-static reveal">
+        <span class="c-ico">📍</span>
+        <b>Челябинск + онлайн</b>
+        <span>Выезд по городу, консультации онлайн — по всей России</span>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <div class="ftr-brand">
+      <span class="brand-mark">🤱</span>
+      <div>
+        <b>Премудрости материнства</b>
+        <p>Елена Шуленина · консультант по грудному вскармливанию и специалист по новорождённым · Челябинск и онлайн</p>
+      </div>
+    </div>
+    <nav class="ftr-nav" aria-label="Подвал">
+      <a href="#services">Услуги и цены</a>
+      <a href="#course">Мини-курс</a>
+      <a href="#meetings">Встречи</a>
+      <a href="#about">Обо мне</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <p class="ftr-note">Информация на сайте носит справочный характер и не заменяет консультацию врача. При острых состояниях обращайтесь к специалисту медицинского профиля.</p>
+  </div>
+</footer>
+
+<a class="fab" href="https://vk.me/ok_gv" target="_blank" rel="noopener" aria-label="Написать в VK">💬 <span>Написать</span></a>
+
+<script src="script.js"></script>
 </body>
 </html>
